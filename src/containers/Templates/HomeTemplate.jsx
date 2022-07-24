@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Navbar } from "../../components";
+import { Navbar, Footer } from "../../components";
 import { Helmet } from "../../utils/Helmet";
 
 import "./HomeTemplate.css";
@@ -10,6 +10,7 @@ export const HomeTemplate = () => {
             <Helmet title="Home" />
             <Navbar />
             <Outlet />
+            <Footer />
         </>
     );
 };

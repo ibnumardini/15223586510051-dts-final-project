@@ -1,0 +1,45 @@
+.hero__base {
+  width: 100%;
+}
+
+.hero {
+  width: 100%;
+  min-height: 500px;
+  background-color: red;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  border-radius: 10px;
+}
+
+.hero__box {
+  width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+  position: absolute;
+  padding: 20px;
+  bottom: 0;
+  border-radius: 10px;
+}
+
+.hero__content {
+  width: 70%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.hero__title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+}
+
+.hero__source {
+  font-size: 1rem;
+}

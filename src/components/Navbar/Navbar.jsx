@@ -31,7 +31,7 @@ export const Navbar = () => {
             </div>
             <div className="navbar__menus">
               <ul>
-                <li>Home</li>
+                <li className="navbar__menus__active">Home</li>
                 <li>News</li>
                 <li>Sport</li>
                 <li>Lifestyle</li>

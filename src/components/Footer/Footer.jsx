@@ -17,52 +17,6 @@ export const Footer = () => {
         <Col md={1} lg={2} xxl={4}></Col>
         <Col md={22} lg={20} xxl={16}>
           <div className={styles.footer}>
-            <div className={styles.footer__detail}>
-              <div className={styles.footer__detail__box}>
-                <span className={styles.footer__detail__box__title}>News</span>
-                <ul>
-                  <li>
-                    <Link to="#">CNN</Link>
-                  </li>
-                  <li>
-                    <Link to="#">BBC</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Suara.com</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Detik.com</Link>
-                  </li>
-                </ul>
-              </div>
-              <div className={styles.footer__detail__box}>
-                <span className={styles.footer__detail__box__title}>Sport</span>
-                <ul>
-                  <li>
-                    <Link to="#">Football</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Volley Ball</Link>
-                  </li>
-                </ul>
-              </div>
-              <div className={styles.footer__detail__box}>
-                <span className={styles.footer__detail__box__title}>
-                  Lifetyle
-                </span>
-                <ul>
-                  <li>
-                    <Link to="#">Indonesia</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Saudi Arabia</Link>
-                  </li>
-                  <li>
-                    <Link to="#">Europe</Link>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div className={styles.footer__social_media}>
               <span className={styles.footer__social_media_title}>
                 Follow {REACT_APP_NAME}
@@ -88,7 +42,7 @@ export const Footer = () => {
               </span>
             </div>
             <div className={styles.footer__copyright}>
-              Made with ❤️ by <Link to="#">15223586510051</Link> &copy; 2022
+              Made with ❤️ by <Link to="#">Muhammad Fatkurozi</Link> &copy; 2022
               Beritaku News Network. All Rights Reserved.
             </div>
           </div>

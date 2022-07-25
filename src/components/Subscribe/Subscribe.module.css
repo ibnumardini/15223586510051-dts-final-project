@@ -1,0 +1,23 @@
+.subscribe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 50px 0;
+}
+
+.subscribe__title {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.subscribe__content {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.subscribe__form {
+  display: flex;
+  gap: 1rem;
+}

@@ -1,5 +1,5 @@
 import { Row, Col } from "antd";
-import { Welcome, Hero, ListNews, ListReel } from "../../components";
+import { Welcome, Hero, ListNews, ListReel, Subscribe } from "../../components";
 
 import styles from "./News.module.css";
 
@@ -15,6 +15,7 @@ export const News = () => {
             <ListNews type="sport" />
             <ListNews type="lifestyle" />
             <ListReel />
+            <Subscribe/>
           </div>
         </Col>
       </Row>

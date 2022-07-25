@@ -1,5 +1,5 @@
 .footer__base {
-    background-color: #4c4c4c;
+    background-color: rgba(13,13,13,.95);
     width: 100%;
     min-height: 300px;
     color: #fff;
@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    padding: 50px 0;
+    padding: 30px 0;
 }
 
 .footer__detail {
@@ -28,6 +28,13 @@
 
 .footer__detail__box ul li {
     list-style: none;
+}
+
+.footer__detail__box ul li a {
+    color: #fff;
+}
+.footer__detail__box ul li a:hover {
+    text-decoration: underline;
 }
 
 .footer__social_media {
@@ -50,6 +57,14 @@
 .footer__privacy {
     display: flex;
     gap: 0.5rem;
+}
+
+.footer__privacy span a {
+    color: #fff;
+}
+
+.footer__privacy span a:hover {
+    text-decoration: underline;
 }
 
 .footer__copyright {

@@ -4,7 +4,7 @@ import { ucWords } from "../../../utils/Typography";
 
 import styles from "./ListNews.module.css";
 
-export const ListNews = ({ type }) => {
+export const ListNews = ({ type, amout }) => {
   return (
     <>
       <Row className={styles.list__base}>

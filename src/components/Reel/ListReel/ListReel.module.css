@@ -1,0 +1,30 @@
+.reel__base {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 0;
+}
+
+.reel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.reel__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reel__head__title h1,
+.reel__head__title h2 {
+  color: #fff;
+  margin: 0;
+}
+
+.reel__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}

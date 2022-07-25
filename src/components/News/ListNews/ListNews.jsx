@@ -2,9 +2,9 @@ import { Row, Col } from "antd";
 import { Item } from "../Item";
 import { ucWords } from "../../../utils/Typography";
 
-import styles from "./List.module.css";
+import styles from "./ListNews.module.css";
 
-export const List = ({ type }) => {
+export const ListNews = ({ type }) => {
   return (
     <>
       <Row className={styles.list__base}>

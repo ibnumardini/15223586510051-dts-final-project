@@ -23,13 +23,13 @@ export const Footer = () => {
               </span>
               <div className={styles.footer__social_media__content}>
                 <Link to="#">
-                  <FacebookOutlined style={{color: 'dodgerblue'}} />
+                  <FacebookOutlined style={{ color: "dodgerblue" }} />
                 </Link>
                 <Link to="#">
-                  <TwitterOutlined style={{color: 'darkturqoise'}} />
+                  <TwitterOutlined style={{ color: "turquoise" }} />
                 </Link>
                 <Link to="#">
-                  <InstagramOutlined style={{color: 'fuchsia'}} />
+                  <InstagramOutlined style={{ color: "fuchsia" }} />
                 </Link>
               </div>
             </div>

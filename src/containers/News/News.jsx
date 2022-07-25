@@ -1,5 +1,5 @@
 import { Row, Col } from "antd";
-import { Hero } from "../../components";
+import { Welcome, Hero } from "../../components";
 
 import styles from "./News.module.css";
 
@@ -9,6 +9,7 @@ export const News = () => {
       <Row className={styles.news__base}>
         <Col md={24}>
           <div className={styles.news}>
+            <Welcome />
             <Hero />
           </div>
         </Col>

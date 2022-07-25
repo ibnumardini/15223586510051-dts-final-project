@@ -1,0 +1,11 @@
+.welcome__base {
+  width: 100%;
+}
+
+.base {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+}

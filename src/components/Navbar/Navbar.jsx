@@ -1,24 +1,34 @@
 import { Row, Col, Avatar, Button, Popover } from "antd";
 import { SearchOutlined } from "@ant-design/icons";
 import { ReadOutlined } from "@ant-design/icons";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+
+import Auth, { SignOutFirebase } from "../../services/auth";
+import { PopoverContent } from "./Popover";
+import { firstChar } from "../../utils/Typography";
+import { Toast, ToastSuccess, ToastError } from "../../utils/Notification";
 
 import "./Navbar.css";
 
 const { REACT_APP_NAME } = process.env;
 
-const infoPopover = (
-  <div>
-    <p>
-      <Link to="#">Profile</Link>
-    </p>
-    <p>
-      <Link to="#">Logout</Link>
-    </p>
-  </div>
-);
-
 export const Navbar = () => {
+  const [user] = useAuthState(Auth);
+  const navigate = useNavigate();
+
+  const handleLogout = async (e) => {
+    e.preventDefault();
+
+    const { ok, message } = await SignOutFirebase();
+    if (ok) {
+      Toast(ToastSuccess, { title: "Logout", desc: "Logout Successfully" });
+      navigate("/auth/login");
+    } else {
+      Toast(ToastError, { title: "Logout", desc: message });
+    }
+  };
+
   return (
     <>
       <Row className="navbar__base">
@@ -50,8 +60,9 @@ export const Navbar = () => {
                 Search
               </Button>
               <Popover
-                content={infoPopover}
-                title="Muhammad Fatkurozi"
+                content={
+                  <PopoverContent handleLogout={handleLogout} user={user} />
+                }
                 placement="bottom"
                 trigger="click"
               >
@@ -62,7 +73,7 @@ export const Navbar = () => {
                   }}
                   className="navbar__avatar"
                 >
-                  MF
+                  {firstChar(user?.displayName ?? user?.email)}
                 </Avatar>
               </Popover>
             </div>

@@ -11,3 +11,11 @@ export const ucWords = (words) => {
 
   return newWords.join(" ");
 };
+
+export const firstChar = (words) => {
+  if (!words || words.length < 1) return "MF";
+
+  const firstChar = words.charAt(0).toUpperCase();
+
+  return firstChar;
+};

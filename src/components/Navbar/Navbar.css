@@ -59,3 +59,8 @@
 .navbar__avatar:hover {
   cursor: pointer;
 }
+
+.navbar__popover {
+  display: flex;
+  flex-direction: column;
+}

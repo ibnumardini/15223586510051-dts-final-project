@@ -5,7 +5,7 @@
 .hero {
   width: 100%;
   min-height: 500px;
-  background-color: red;
+  background-color: #cacaca;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -20,6 +20,7 @@
   padding: 20px;
   bottom: 0;
   border-radius: 2px;
+  min-height: 50%;
 }
 
 .hero__content {
@@ -31,9 +32,10 @@
   margin-bottom: 1rem;
 }
 
-.hero__title {
+.hero__title a {
   font-size: 2rem;
   font-weight: 700;
+  color: #fff;
 }
 
 .hero__subtitle {

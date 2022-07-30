@@ -11,7 +11,7 @@ export const News = () => {
           <div className={styles.news}>
             <Welcome />
             <Hero />
-            <ListNews type="news" amout="3" />
+            <ListNews type="Latest News" amout="4" />
             <ListNews type="sport" amout="3" />
             <ListReel />
             <ListNews type="news portal" amout="4" />

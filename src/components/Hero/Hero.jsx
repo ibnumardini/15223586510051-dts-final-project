@@ -1,35 +1,60 @@
-import { Row, Col } from "antd";
+import { Row, Col, Carousel } from "antd";
+import moment from "moment";
+import { Link } from "react-router-dom";
+
+import { useGetLatestNewsQuery } from "../../services/news/cnbc";
+import { Toast, ToastError } from "../../utils/Notification";
+import Loading from "../../utils/Loading";
 
 import styles from "./Hero.module.css";
-import placeholder from "../../assets/hero.jpg";
 
 export const Hero = () => {
+  const { data, error, isLoading } = useGetLatestNewsQuery();
+
+  const latestNews = data?.data?.posts?.slice(0, 5);
+
   return (
     <>
-      <Row className={styles.hero__base}>
-        <Col md={1} lg={2} xxl={4}></Col>
-        <Col md={22} lg={20} xxl={16}>
-          <div
-            className={styles.hero}
-            style={{ backgroundImage: `url(${placeholder})` }}
-          >
-            <div className={styles.hero__box}>
-              <div className={styles.hero__content}>
-                <span className={styles.hero__title} level={2}>
-                  Russia denies causing global food crisis
-                </span>
-                <span className={styles.hero__subtitle} level={4}>
-                  Russia's Foreign Minister, Sergei Lavrov, on a diplomatic
-                  offensive in Egypt, has dismissed claims that Moscow caused
-                  the global food crisis.
-                </span>
-                <span className={styles.hero__source}>Kompas.com</span>
-              </div>
-            </div>
-          </div>
-        </Col>
-        <Col md={1} lg={2} xxl={4}></Col>
-      </Row>
+      {error ? (
+        Toast(ToastError, { title: "Hero Content", desc: error })
+      ) : isLoading ? (
+        <Loading />
+      ) : (
+        <Row className={styles.hero__base}>
+          <Col md={1} lg={2} xxl={4}></Col>
+          <Col md={22} lg={20} xxl={16}>
+            <Carousel autoplay>
+              {latestNews.map((val, idx) => {
+                return <HeroElement key={idx} post={val} />;
+              })}
+            </Carousel>
+          </Col>
+          <Col md={1} lg={2} xxl={4}></Col>
+        </Row>
+      )}
     </>
+  );
+};
+
+const HeroElement = ({ post }) => {
+  return (
+    <div
+      className={styles.hero}
+      style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(${post.thumbnail})` }}
+    >
+      <div className={styles.hero__box}>
+        <div className={styles.hero__content}>
+          <span className={styles.hero__title} level={2}>
+            <a href={post.link} target="_blank">{post.title}</a>
+          </span>
+          <span className={styles.hero__subtitle} level={4}>
+            {post.description}
+          </span>
+          <span className={styles.hero__source}>
+            {moment(post.pubDate).format("DD MMMM YYYY HH:mm")}
+          </span>
+        </div>
+      </div>
+    </div>
   );
 };

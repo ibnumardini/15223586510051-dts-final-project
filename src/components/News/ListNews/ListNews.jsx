@@ -4,7 +4,9 @@ import { ucWords } from "../../../utils/Typography";
 
 import styles from "./ListNews.module.css";
 
-export const ListNews = ({ type, amout }) => {
+export const ListNews = ({ type, amout, dataApi }) => {
+  const news = dataApi?.data?.posts?.slice(6, 6 + parseInt(amout));
+
   return (
     <>
       <Row className={styles.list__base}>
@@ -15,9 +17,9 @@ export const ListNews = ({ type, amout }) => {
               <h1>{ucWords(type)}</h1>
             </div>
             <div className={styles.list__content}>
-              <Item />
-              <Item />
-              <Item />
+              {news.map((val) => {
+                return <Item post={val} />;
+              })}
             </div>
           </div>
         </Col>

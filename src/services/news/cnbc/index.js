@@ -18,5 +18,5 @@ export const cnbcNewsApi = createApi({
   }),
 });
 
-export const { useGetNewsQuery, useGetLatestNewsQuery, useGetTechQuery } =
+export const { useGetNewsQuery, useGetLatestNewsQuery, useGetTechNewsQuery } =
   cnbcNewsApi;

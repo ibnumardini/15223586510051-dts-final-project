@@ -1,12 +1,16 @@
 import { Row, Col } from "antd";
 import { Welcome, Hero, ListNews, ListReel } from "../../components";
-import { useGetLatestNewsQuery } from "../../services/news/cnbc";
+import {
+  useGetLatestNewsQuery,
+  useGetTechNewsQuery,
+} from "../../services/news/cnbc";
 import Loading from "../../utils/Loading";
 
 import styles from "./News.module.css";
 
 export const News = () => {
   const latestNews = useGetLatestNewsQuery();
+  const techNews = useGetTechNewsQuery();
 
   return (
     <>
@@ -26,7 +30,13 @@ export const News = () => {
                 dataApi={latestNews.data}
               />
             )}
-            {/* <ListNews type="sport" amout="3" /> */}
+            {techNews.error ? (
+              console.log(techNews.error)
+            ) : techNews.isLoading ? (
+              <Loading />
+            ) : (
+              <ListNews type="Tech News" amout="3" dataApi={techNews.data} />
+            )}
             <ListReel />
             {/* <ListNews type="news portal" amout="4" /> */}
           </div>

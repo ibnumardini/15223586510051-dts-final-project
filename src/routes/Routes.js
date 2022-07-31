@@ -28,7 +28,7 @@ const Routes = () => {
             }
           />
           <Route
-            path="/detail-news/:provider/:newsId"
+            path="/detail-news/:provider/:slug"
             element={
               <MustLoginFirst>
                 <DetailNews />

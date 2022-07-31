@@ -1,5 +1,4 @@
 import { Card } from "antd";
-import moment from "moment";
 
 import { PublishDate } from "../../../utils/Date";
 

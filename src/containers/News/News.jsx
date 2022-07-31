@@ -1,16 +1,21 @@
 import { Row, Col } from "antd";
-import { Welcome, Hero, ListNews, ListReel } from "../../components";
+import { useMediaQuery } from "react-responsive";
+import { Welcome, Hero, ListNews } from "../../components";
 import {
   useGetLatestNewsQuery,
   useGetTechNewsQuery,
+  useGetLifestyleNewsQuery,
 } from "../../services/news/cnbc";
 import Loading from "../../utils/Loading";
 
 import styles from "./News.module.css";
 
 export const News = () => {
+  const isXlScreen = useMediaQuery({ query: "(min-width: 1200px)" });
+
   const latestNews = useGetLatestNewsQuery();
   const techNews = useGetTechNewsQuery();
+  const lifestyleNews = useGetLifestyleNewsQuery();
 
   return (
     <>
@@ -26,7 +31,7 @@ export const News = () => {
             ) : (
               <ListNews
                 type="Latest News"
-                amout="3"
+                amout={isXlScreen ? 4 : 3}
                 dataApi={latestNews.data}
               />
             )}
@@ -35,10 +40,23 @@ export const News = () => {
             ) : techNews.isLoading ? (
               <Loading />
             ) : (
-              <ListNews type="Tech News" amout="3" dataApi={techNews.data} />
+              <ListNews
+                type="Tech News"
+                amout={isXlScreen ? 4 : 3}
+                dataApi={techNews.data}
+              />
             )}
-            <ListReel />
-            {/* <ListNews type="news portal" amout="4" /> */}
+            {lifestyleNews.error ? (
+              console.log(lifestyleNews.error)
+            ) : lifestyleNews.isLoading ? (
+              <Loading />
+            ) : (
+              <ListNews
+                type="Lifestyle News"
+                amout={isXlScreen ? 4 : 3}
+                dataApi={lifestyleNews.data}
+              />
+            )}
           </div>
         </Col>
       </Row>

@@ -15,8 +15,15 @@ export const cnbcNewsApi = createApi({
     getTechNews: builder.query({
       query: () => "/tech",
     }),
+    getLifestyleNews: builder.query({
+      query: () => "/lifestyle",
+    }),
   }),
 });
 
-export const { useGetNewsQuery, useGetLatestNewsQuery, useGetTechNewsQuery } =
-  cnbcNewsApi;
+export const {
+  useGetNewsQuery,
+  useGetLatestNewsQuery,
+  useGetTechNewsQuery,
+  useGetLifestyleNewsQuery,
+} = cnbcNewsApi;

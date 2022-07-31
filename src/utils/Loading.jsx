@@ -11,6 +11,7 @@ function Loading() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          margin: "5rem 0"
         }}
       >
         <ReactLoading type="bubbles" color="#cacaca" width="5%" />

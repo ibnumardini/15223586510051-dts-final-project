@@ -1,5 +1,4 @@
 import { Row, Col, Carousel } from "antd";
-import moment from "moment";
 
 import { useGetNewsQuery } from "../../services/news/cnbc";
 import { Toast, ToastError } from "../../utils/Notification";

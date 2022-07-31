@@ -8,7 +8,7 @@ export const Item = () => {
     <>
       <Card
         className={styles.item__card}
-        cover={<img src={placeholder} />}
+        cover={<img src={placeholder} alt="cover" />}
         style={{ width: "100%" }}
       >
         <div className={styles.item__desc}>

@@ -8,12 +8,12 @@ export const Item = ({ post }) => {
     <>
       <Card
         className={styles.item__card}
-        cover={<img src={post.thumbnail} />}
+        cover={<img src={post.thumbnail} alt={post.title} />}
         style={{ width: "100%" }}
       >
         <div className={styles.item}>
           <span className={styles.item__title}>
-            <a href={post.link} target="_blank">
+            <a href={post.link} target="_blank" rel="noreferrer">
               {post.title}
             </a>
           </span>

@@ -46,7 +46,7 @@ const HeroElement = ({ post }) => {
       <div className={styles.hero__box}>
         <div className={styles.hero__content}>
           <span className={styles.hero__title} level={2}>
-            <a href={post.link} target="_blank">
+            <a href={post.link} target="_blank" rel="noreferrer">
               {post.title}
             </a>
           </span>

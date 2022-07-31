@@ -20,7 +20,7 @@ export const AuthTemplate = () => {
     if (![`${prefixPath}/login`, `${prefixPath}/signup`].includes(pathname)) {
       navigate("/auth/login");
     }
-  }, []);
+  }, [navigate, pathname]);
 
   return (
     <Row id="auth__base">

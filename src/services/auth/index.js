@@ -28,7 +28,7 @@ export const RegisterFirebase = async ({ name, email, password }) => {
 
 export const LoginFirebase = async ({ email, password }) => {
   try {
-    const user = await signInWithEmailAndPassword(Auth, email, password);
+    await signInWithEmailAndPassword(Auth, email, password);
 
     return { ok: true };
   } catch (err) {

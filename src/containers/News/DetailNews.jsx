@@ -1,4 +1,4 @@
-import { Row, Col, Button } from "antd";
+import { Row, Col } from "antd";
 import {
   LinkOutlined,
   FacebookOutlined,
@@ -56,7 +56,7 @@ export const DetailNews = () => {
             </div>
             <div className={styles.detail_news__feature}>
               <span className={styles.detail_news__feature__image}>
-                <img src={placeholder} alt="image" />
+                <img src={placeholder} alt="placeholder" />
               </span>
               <span>Konferensi pers di Komnas HAM (Rakha/detikcom)</span>
             </div>

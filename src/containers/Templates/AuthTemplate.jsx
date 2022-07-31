@@ -34,7 +34,7 @@ export const AuthTemplate = () => {
             <Title level={2}>
               {signup ? "Sign Up" : "Login"} to {REACT_APP_NAME}
             </Title>
-            <Paragraph>
+            <Paragraph className="auth__desc">
               {signup
                 ? "Join with us, you can access the outside world very easily."
                 : "Log in to get unlimited access, and enjoy your surfing."}

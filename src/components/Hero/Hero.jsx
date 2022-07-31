@@ -4,6 +4,7 @@ import moment from "moment";
 import { useGetNewsQuery } from "../../services/news/cnbc";
 import { Toast, ToastError } from "../../utils/Notification";
 import Loading from "../../utils/Loading";
+import { PublishDate } from "../../utils/Date";
 
 import styles from "./Hero.module.css";
 
@@ -54,7 +55,7 @@ const HeroElement = ({ post }) => {
             {post.description}
           </span>
           <span className={styles.hero__source}>
-            {moment(post.pubDate).format("DD MMMM YYYY HH:mm")}
+            {PublishDate(post.pubDate)}
           </span>
         </div>
       </div>

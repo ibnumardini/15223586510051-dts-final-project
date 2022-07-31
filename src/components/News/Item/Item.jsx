@@ -1,6 +1,8 @@
 import { Card } from "antd";
 import moment from "moment";
 
+import { PublishDate } from "../../../utils/Date";
+
 import styles from "./Item.module.css";
 
 export const Item = ({ post }) => {
@@ -19,7 +21,7 @@ export const Item = ({ post }) => {
           </span>
           <span className={styles.item__subtitle}>{post.description}</span>
           <span className={styles.item__source}>
-            {moment(post.pubDate).format("DD MMMM YYYY HH:mm")}
+            {PublishDate(post.pubDate)}
           </span>
         </div>
       </Card>

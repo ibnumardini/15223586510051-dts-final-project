@@ -6,7 +6,7 @@ import {
   TwitterOutlined,
   InstagramOutlined,
 } from "@ant-design/icons";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import {
   useGetNewsQuery,
@@ -19,11 +19,10 @@ import { Slugify } from "../../utils/Typography";
 import { PublishDate } from "../../utils/Moment";
 
 import styles from "./DetailNews.module.css";
-import placeholder from "../../assets/hero.jpg";
 import Loading from "../../utils/Loading";
 
 export const DetailNews = () => {
-  const { provider, slug } = useParams();
+  const { slug } = useParams();
 
   useEffect(() => {
     ScrollToTop();
@@ -54,7 +53,7 @@ export const DetailNews = () => {
     });
 
     newsPicked.data = allNews.find((val) => {
-      return val.slug == slug;
+      return val.slug === slug;
     });
 
     newsPicked.isLoading = false;

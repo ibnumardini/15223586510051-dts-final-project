@@ -23,6 +23,10 @@
   min-height: 50%;
 }
 
+.hero__content:hover {
+  color: #cacaca !important;
+}
+
 .hero__content {
   width: 70%;
   color: #fff;
@@ -32,10 +36,9 @@
   margin-bottom: 1rem;
 }
 
-.hero__title a {
+.hero__title {
   font-size: 2rem;
   font-weight: 700;
-  color: #fff;
 }
 
 .hero__subtitle {

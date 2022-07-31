@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Row, Col } from "antd";
 import {
   LinkOutlined,
@@ -7,11 +8,17 @@ import {
 } from "@ant-design/icons";
 import { Link, useParams } from "react-router-dom";
 
+import { ScrollToTop } from "../../utils/Screen";
+
 import styles from "./DetailNews.module.css";
 import placeholder from "../../assets/hero.jpg";
 
 export const DetailNews = () => {
   const { provider, newsId } = useParams();
+
+  useEffect(() => {
+    ScrollToTop();
+  }, []);
 
   console.log(provider, newsId);
 

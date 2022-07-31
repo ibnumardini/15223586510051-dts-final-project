@@ -1,9 +1,11 @@
 import { Row, Col, Carousel } from "antd";
+import { Link } from "react-router-dom";
 
 import { useGetNewsQuery } from "../../services/news/cnbc";
 import { Toast, ToastError } from "../../utils/Notification";
 import Loading from "../../utils/Loading";
-import { PublishDate } from "../../utils/Date";
+import { PublishDate } from "../../utils/Moment";
+import { Slugify } from "../../utils/Typography";
 
 import styles from "./Hero.module.css";
 
@@ -24,7 +26,9 @@ export const Hero = () => {
           <Col md={22} lg={20} xxl={16}>
             <Carousel autoplay>
               {news.map((val, idx) => {
-                return <HeroElement key={idx} post={val} />;
+                const slug = Slugify(val.title);
+
+                return <HeroElement key={idx} slug={slug} post={val} />;
               })}
             </Carousel>
           </Col>
@@ -35,7 +39,7 @@ export const Hero = () => {
   );
 };
 
-const HeroElement = ({ post }) => {
+const HeroElement = ({ slug, post }) => {
   return (
     <div
       className={styles.hero}
@@ -43,21 +47,21 @@ const HeroElement = ({ post }) => {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url(${post.thumbnail})`,
       }}
     >
-      <div className={styles.hero__box}>
-        <div className={styles.hero__content}>
-          <span className={styles.hero__title} level={2}>
-            <a href={post.link} target="_blank" rel="noreferrer">
+      <Link to={`/detail-news/cnbc/${slug}`}>
+        <div className={styles.hero__box}>
+          <div className={styles.hero__content}>
+            <span className={styles.hero__title} level={2}>
               {post.title}
-            </a>
-          </span>
-          <span className={styles.hero__subtitle} level={4}>
-            {post.description}
-          </span>
-          <span className={styles.hero__source}>
-            {PublishDate(post.pubDate)}
-          </span>
+            </span>
+            <span className={styles.hero__subtitle} level={4}>
+              {post.description}
+            </span>
+            <span className={styles.hero__source}>
+              {PublishDate(post.pubDate)}
+            </span>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };

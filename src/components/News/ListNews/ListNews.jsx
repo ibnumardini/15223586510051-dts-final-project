@@ -1,6 +1,6 @@
 import { Row, Col } from "antd";
 import { Item } from "../Item";
-import { ucWords } from "../../../utils/Typography";
+import { ucWords, Slugify } from "../../../utils/Typography";
 
 import styles from "./ListNews.module.css";
 
@@ -18,7 +18,9 @@ export const ListNews = ({ type, amout, dataApi }) => {
             </div>
             <div className={styles.list__content}>
               {news.map((val, idx) => {
-                return <Item key={idx} post={val} />;
+                const slug = Slugify(val.title);
+
+                return <Item key={idx} slug={slug} post={val} />;
               })}
             </div>
           </div>

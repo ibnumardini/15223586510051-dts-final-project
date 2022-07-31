@@ -19,3 +19,18 @@ export const firstChar = (words) => {
 
   return firstChar;
 };
+
+export const Slugify = (words) => {
+  return (
+    words
+      .toString()
+      .normalize("NFKD")
+      .toLowerCase()
+      .trim()
+      .replace(/\s+/g, "-")
+      // eslint-disable-next-line
+      .replace(/[^\w\-]+/g, "")
+      // eslint-disable-next-line
+      .replace(/\-\-+/g, "-")
+  );
+};

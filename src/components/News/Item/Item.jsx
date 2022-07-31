@@ -1,10 +1,11 @@
 import { Card } from "antd";
+import { Link } from "react-router-dom";
 
-import { PublishDate } from "../../../utils/Date";
+import { PublishDate } from "../../../utils/Moment";
 
 import styles from "./Item.module.css";
 
-export const Item = ({ post }) => {
+export const Item = ({ slug, post }) => {
   return (
     <>
       <Card
@@ -12,17 +13,15 @@ export const Item = ({ post }) => {
         cover={<img src={post.thumbnail} alt={post.title} />}
         style={{ width: "100%" }}
       >
-        <div className={styles.item}>
-          <span className={styles.item__title}>
-            <a href={post.link} target="_blank" rel="noreferrer">
-              {post.title}
-            </a>
-          </span>
-          <span className={styles.item__subtitle}>{post.description}</span>
-          <span className={styles.item__source}>
-            {PublishDate(post.pubDate)}
-          </span>
-        </div>
+        <Link to={`/detail-news/cnbc/${slug}`}>
+          <div className={styles.item}>
+            <span className={styles.item__title}>{post.title}</span>
+            <span className={styles.item__subtitle}>{post.description}</span>
+            <span className={styles.item__source}>
+              {PublishDate(post.pubDate)}
+            </span>
+          </div>
+        </Link>
       </Card>
     </>
   );

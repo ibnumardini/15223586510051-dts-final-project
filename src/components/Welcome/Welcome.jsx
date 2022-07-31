@@ -1,4 +1,5 @@
 import { Row, Col } from "antd";
+import moment from "moment";
 
 import styles from "./Welcome.module.css";
 
@@ -11,7 +12,7 @@ export const Welcome = () => {
       <Col md={22} lg={20} xxl={16}>
         <div className={styles.base}>
           <span>Welcome to. {REACT_APP_NAME}</span>
-          <span>Monday, 25 July 2022</span>
+          <span>{moment().format("dddd, MMMM DD YYYY")}</span>
         </div>
       </Col>
       <Col md={1} lg={2} xxl={4}></Col>

@@ -10,7 +10,7 @@ export const SearchBox = ({ querySearch }) => {
 
   useEffect(() => {
     setQuery(querySearch);
-  }, []);
+  }, [querySearch]);
 
   const searchNewsHandler = (query) => {
     navigate({

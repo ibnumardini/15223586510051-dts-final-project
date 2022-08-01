@@ -1,5 +1,3 @@
-import styles from "./SearchBoxResult.module.css";
-
 import { ListNewsItem } from "../ListNewsItem";
 import {
   useGetLatestNewsQuery,

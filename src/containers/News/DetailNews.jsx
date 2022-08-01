@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { Row, Col } from "antd";
+import { Row, Col, Button } from "antd";
 import {
   LinkOutlined,
   FacebookOutlined,
   TwitterOutlined,
   InstagramOutlined,
+  ArrowRightOutlined,
 } from "@ant-design/icons";
 import { useParams } from "react-router-dom";
 
@@ -108,7 +109,9 @@ export const DetailNews = () => {
               <div className={styles.detail_news__body}>
                 <p>{newsPicked.data.description}</p>
                 <a href={newsPicked.data.link} target="_blank" rel="noreferrer">
-                  Read more...
+                  <Button>
+                    Continue Reading <ArrowRightOutlined />
+                  </Button>
                 </a>
               </div>
             </div>

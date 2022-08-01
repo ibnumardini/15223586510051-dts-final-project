@@ -1,0 +1,32 @@
+.list_news__base {
+  padding: 2rem 0;
+}
+
+.list_news {
+  display: flex;
+  flex-direction: column;
+}
+
+.list_news__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.list_news__title:before {
+  content: " ";
+  display: inline-block;
+  margin-right: 0.5rem;
+  border-left: 3px solid green;
+  height: 1.3rem;
+  padding: 0;
+  width: 0;
+}
+
+.list_news a {
+  color: #333;
+}
+
+.list_news a:hover {
+  color: rgb(83, 83, 83);
+  transition: 0.5s;
+}

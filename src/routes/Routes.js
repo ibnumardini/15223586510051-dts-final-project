@@ -2,7 +2,7 @@ import { Routes as RouterDOM, Route } from "react-router-dom";
 
 import { AuthTemplate, HomeTemplate } from "../containers/Templates";
 import { Login, Signup } from "../containers/Auth";
-import { News, DetailNews } from "../containers/News";
+import { News, DetailNews, ListNews } from "../containers/News";
 import { MustLoginFirst, AlreadyLogin } from "../components";
 
 import { NotFound } from "../containers/Exception";
@@ -32,6 +32,14 @@ const Routes = () => {
             element={
               <MustLoginFirst>
                 <DetailNews />
+              </MustLoginFirst>
+            }
+          />
+          <Route
+            path="/list-news/:provider/:category"
+            element={
+              <MustLoginFirst>
+                <ListNews />
               </MustLoginFirst>
             }
           />

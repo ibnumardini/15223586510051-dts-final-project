@@ -1,16 +1,17 @@
 .list_news__box {
   display: flex;
   align-items: center;
-  padding: 15px;
+  padding: 20px 0;
   gap: 1rem;
   border-bottom: 1px solid #cacaca;
 }
 
 .list_news__box__image {
   background-color: #cacaca;
-  width: 250px;
+  width: 200px;
   min-height: 100px;
   border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .list_news__box__image img {

@@ -68,16 +68,13 @@ export const DetailNews = () => {
             <Loading />
           ) : (
             <div className={styles.detail_news}>
-              <div className={styles.detail_news__category}>
-                <span>Politic</span>
-              </div>
               <div className={styles.detail_news__head}>
                 <div className={styles.detail_news__title}>
                   {newsPicked.data.title}
                 </div>
                 <div className={styles.detail_news__subtitle}>
                   <div className={styles.detail_news__subtitle__author}>
-                    Muhammad Fatkurozi
+                    News Author
                   </div>
                   <div>-</div>
                   <div className={styles.detail_news__subtitle__date}>
@@ -106,7 +103,7 @@ export const DetailNews = () => {
                     alt={newsPicked.data.slug}
                   />
                 </span>
-                <span>Konferensi pers di Komnas HAM (Rakha/detikcom)</span>
+                <span>{newsPicked.data.title}</span>
               </div>
               <div className={styles.detail_news__body}>
                 <p>{newsPicked.data.description}</p>

@@ -10,12 +10,7 @@
   justify-self: center;
 }
 
-.detail_news__category span {
-  font-size: 1.9rem;
-  font-weight: 700;
-}
-
-.detail_news__category span::before {
+.detail_news__title:before {
   content: " ";
   display: inline-block;
   margin-right: 0.5rem;

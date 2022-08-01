@@ -3,6 +3,7 @@ import { SearchOutlined } from "@ant-design/icons";
 import { ReadOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 
 import Auth, { SignOutFirebase } from "../../services/auth";
 import { PopoverContent } from "./Popover";
@@ -35,10 +36,12 @@ export const Navbar = () => {
         <Col md={1} lg={2} xxl={4}></Col>
         <Col md={22} lg={20} xxl={16}>
           <div className="navbar">
-            <div className="navbar__logo">
-              <ReadOutlined className="navbar__logo__icon" />
-              <span className="navbar__logo_text">{REACT_APP_NAME}</span>
-            </div>
+            <Link to="/">
+              <div className="navbar__logo">
+                <ReadOutlined className="navbar__logo__icon" />
+                <span className="navbar__logo_text">{REACT_APP_NAME}</span>
+              </div>
+            </Link>
             <div className="navbar__menus">
               <ul>
                 <li className="navbar__menus__active">Home</li>

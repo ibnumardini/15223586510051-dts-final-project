@@ -12,6 +12,14 @@
   align-items: center;
 }
 
+.navbar a {
+  color: #fff;
+}
+
+.navbar a:hover {
+  color: #cacaca;
+}
+
 .navbar__logo {
   display: flex;
   justify-content: center;

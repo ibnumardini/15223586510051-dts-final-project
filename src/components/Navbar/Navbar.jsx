@@ -82,16 +82,19 @@ export const Navbar = () => {
               </ul>
             </div>
             <div className="navbar__info">
-              <Button
-                style={{
-                  backgroundColor: "#202224",
-                  color: "#fff",
-                  border: "none",
-                }}
-                icon={<SearchOutlined />}
-              >
-                Search
-              </Button>
+              <Link to="/search">
+                <Button
+                  style={{
+                    backgroundColor:
+                      PageNow() === "search" ? "rgb(56 56 56)" : "#202224",
+                    color: "#fff",
+                    border: "none",
+                  }}
+                  icon={<SearchOutlined />}
+                >
+                  Search
+                </Button>
+              </Link>
               <Popover
                 content={
                   <PopoverContent handleLogout={handleLogout} user={user} />

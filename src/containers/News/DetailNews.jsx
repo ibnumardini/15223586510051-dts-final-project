@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { Row, Col, Button } from "antd";
 import {
-  LinkOutlined,
   FacebookOutlined,
   TwitterOutlined,
-  InstagramOutlined,
+  MailOutlined,
   ArrowRightOutlined,
 } from "@ant-design/icons";
 import { useParams } from "react-router-dom";
+import { FacebookShareButton, TwitterShareButton, EmailShareButton } from "react-share";
 
 import {
   useGetNewsQuery,
@@ -15,7 +15,7 @@ import {
   useGetTechNewsQuery,
   useGetLifestyleNewsQuery,
 } from "../../services/news/cnbc";
-import { ScrollToTop } from "../../utils/Screen";
+import { ScrollToTop, UrlScreenNow } from "../../utils/Screen";
 import { Slugify } from "../../utils/Typography";
 import { PublishDate } from "../../utils/Moment";
 
@@ -85,16 +85,25 @@ export const DetailNews = () => {
               </div>
               <div className={styles.detail_news__social}>
                 <span>
-                  <FacebookOutlined style={{ color: "dodgerblue" }} />
+                  <FacebookShareButton
+                    url={UrlScreenNow()}
+                    quote={UrlScreenNow()}
+                  >
+                    <FacebookOutlined style={{ color: "dodgerblue" }} />
+                  </FacebookShareButton>
                 </span>
                 <span>
-                  <TwitterOutlined style={{ color: "turquoise" }} />
+                  <TwitterShareButton
+                    url={UrlScreenNow()}
+                    quote={UrlScreenNow()}
+                  >
+                    <TwitterOutlined style={{ color: "turquoise" }} />
+                  </TwitterShareButton>
                 </span>
                 <span>
-                  <InstagramOutlined style={{ color: "fuchsia" }} />
-                </span>
-                <span>
-                  <LinkOutlined />
+                  <EmailShareButton url={UrlScreenNow()} quote={UrlScreenNow()}>
+                    <MailOutlined style={{ color: "fuchsia" }} />
+                  </EmailShareButton>
                 </span>
               </div>
               <div className={styles.detail_news__feature}>

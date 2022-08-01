@@ -9,6 +9,7 @@ import Auth, { SignOutFirebase } from "../../services/auth";
 import { PopoverContent } from "./Popover";
 import { firstChar } from "../../utils/Typography";
 import { Toast, ToastSuccess, ToastError } from "../../utils/Notification";
+import { PageNow } from "../../utils/Screen";
 
 import "./Navbar.css";
 
@@ -44,11 +45,40 @@ export const Navbar = () => {
             </Link>
             <div className="navbar__menus">
               <ul>
-                <li className="navbar__menus__active">Home</li>
-                <li>News</li>
-                <li>Sport</li>
-                <li>Lifestyle</li>
-                <li>Contact</li>
+                <Link to="/">
+                  <li className={!PageNow() ? "navbar__menus__active" : ""}>
+                    Home
+                  </li>
+                </Link>
+                <Link to="/list-news/cnbc/latest-news">
+                  <li
+                    className={
+                      PageNow() === "latest-news" ? "navbar__menus__active" : ""
+                    }
+                  >
+                    Latest News
+                  </li>
+                </Link>
+                <Link to="/list-news/cnbc/tech-news">
+                  <li
+                    className={
+                      PageNow() === "tech-news" ? "navbar__menus__active" : ""
+                    }
+                  >
+                    Tech
+                  </li>
+                </Link>
+                <Link to="/list-news/cnbc/lifestyle-news">
+                  <li
+                    className={
+                      PageNow() === "lifestyle-news"
+                        ? "navbar__menus__active"
+                        : ""
+                    }
+                  >
+                    Lifestyle
+                  </li>
+                </Link>
               </ul>
             </div>
             <div className="navbar__info">

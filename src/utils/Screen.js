@@ -5,3 +5,9 @@ export const ScrollToTop = () => {
 export const UrlScreenNow = () => {
   return window.location.href;
 };
+
+export const PageNow = () => {
+  const arrPage = UrlScreenNow().split("/");
+
+  return arrPage[arrPage.length - 1];
+};

@@ -40,6 +40,8 @@ export const ListNews = () => {
         newsPicked.isLoading = false;
       }
       break;
+    default:
+      break;
   }
 
   const listNewsTitle = ucWords(category.replace("-", " "));

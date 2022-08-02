@@ -1,0 +1,41 @@
+#auth__base {
+    padding-top: 10rem;
+}
+
+#auth {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.auth__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth__logo__icon {
+    font-size: 3rem;
+}
+
+.auth__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth__form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth__extra {
+    display: flex;
+    justify-content: space-between;
+}
+
+.auth__extra__sign_up {
+    display: flex;
+    gap: 0.3rem;
+}

@@ -1,0 +1,24 @@
+.list__title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.list__title h1::before {
+  content: " ";
+  display: inline-block;
+  margin-right: 0.5rem;
+  border-left: 3px solid green;
+  height: 1.1rem;
+  padding: 0;
+  width: 0;
+}
+
+.list__title h1 {
+  font-size: 1.5rem;
+}
+
+.list__content {
+  display: flex;
+  gap: 1rem;
+}

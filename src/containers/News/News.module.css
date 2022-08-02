@@ -1,0 +1,9 @@
+.news__base {
+    padding: 2rem 0;
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

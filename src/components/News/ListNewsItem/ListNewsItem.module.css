@@ -1,0 +1,29 @@
+.list_news__box {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  gap: 1rem;
+  border-bottom: 1px solid #cacaca;
+}
+
+.list_news__box__image {
+  background-color: #cacaca;
+  width: 200px;
+  min-height: 100px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.list_news__box__image img {
+  width: 100%;
+  border-radius: 2px;
+}
+
+.list_news__box__content__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.list_news__box__content__pub_date {
+  font-size: 0.9rem;
+}

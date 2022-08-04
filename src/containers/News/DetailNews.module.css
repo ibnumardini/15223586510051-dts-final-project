@@ -15,7 +15,7 @@
   display: inline-block;
   margin-right: 0.5rem;
   border-left: 3px solid green;
-  height: 1.3rem;
+  height: 1.1rem;
   padding: 0;
   width: 0;
 }
@@ -27,7 +27,7 @@
 }
 
 .detail_news__title {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -66,4 +66,10 @@
 
 .detail_news__feature span {
   font-style: italic;
+}
+
+.detail_news__body {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
 }
